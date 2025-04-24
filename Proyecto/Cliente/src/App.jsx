@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Login from './pages/Login/Login.jsx'
+import Main from './pages/main/main.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,6 +38,9 @@ function App() {
               </p>
               <Link to="/login">
                 <button>Go to Login</button>
+              </Link>
+              <Link to="/main">
+                <button>Go to Main</button>
               </Link>
             </>
           }
