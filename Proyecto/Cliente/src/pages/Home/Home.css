@@ -1,0 +1,188 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: #121212;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  padding-bottom: 5rem; /* Espacio adicional para que las últimas tarjetas sean visibles */
+}
+
+.search-bar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border: 2px solid #30D5C8;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.search-bar input::placeholder {
+  color: #ccc;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  color: #30D5C8;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.filter-button {
+  position: fixed;
+  top: 10px;
+  left: calc(50% - 350px); /* Más separado hacia la izquierda */
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #30D5C8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: calc(70px); /* Ajuste para que el botón de filtros tenga el mismo largo que el buscador */
+}
+
+.filter-button:hover {
+  background-color: #30D5C8;
+  color: #121212;
+}
+
+.settings-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #30D5C8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-button:hover {
+  background-color: #30D5C8;
+  color: #121212;
+}
+
+.home-content {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.login-button {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #30D5C8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #1e9e8c;
+}
+
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 8rem; /* Incremento de separación del buscador */
+}
+
+.section-card {
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.section-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.section-title {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1e1e1e;
+}
+
+.top-bar {
+  position: relative; /* Cambiado a relativo para que no sea fijo */
+  width: 100%;
+  height: 50px;
+  background-color: #1e1e1e; /* Color oscuro para coincidir con el diseño */
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+  }
+
+  .filter-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+

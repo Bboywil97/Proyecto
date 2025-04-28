@@ -241,45 +241,26 @@
   
   /* Botón de login */
   .login-button {
-    padding: 15px;
+    display: block;
+    margin: 20px 0 0; /* Espaciado solo hacia arriba */
+    padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 50px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
-    font-size: 16px;
+    border-radius: 5px;
+    background: #30D5C8;
+    color: #ffffff;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-    letter-spacing: 0.5px;
   }
   
   .login-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, var(--primary-dark), var(--secondary-color));
+    background: #1e9e8c;
   }
   
   .login-button:active {
     transform: translateY(0);
-  }
-  
-  .login-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
-  }
-  
-  .login-button:hover::before {
-    left: 100%;
   }
   
   /* Estado de submitting */

@@ -1,0 +1,49 @@
+.pueblo-container {
+  padding-bottom: 5rem; /* Espacio adicional para permitir desplazarse más */
+}
+
+.section-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.section-details {
+  flex: 1;
+  margin-left: 1rem;
+  color: #ffffff;
+}
+
+.section-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.action-button {
+  background-color: #30D5C8;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #1e9e8c;
+}

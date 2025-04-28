@@ -1,0 +1,45 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #121212; /* Modo oscuro */
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  border-top: 3px solid #30D5C8; /* Línea de margen superior */
+}
+
+.nav-item {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #30D5C8;
+  color: #121212;
+}
+
+.navbar-button {
+  background-color: #1e1e1e; /* Botones en modo oscuro */
+  color: #ffffff;
+  border: 2px solid #30D5C8; /* Borde del color especificado */
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: #30D5C8; /* Cambia el fondo al color especificado */
+  color: #121212; /* Cambia el texto a oscuro */
+}

@@ -1,0 +1,19 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.profile-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile-container p {
+  font-size: 1.2rem;
+}
