@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/useAuth';
 import './Home.css';
 import marImage from '../../assets/marImage.jpg';
 import montanaImage from '../../assets/montanaImage.jpg';
@@ -10,7 +9,6 @@ import comidaImage from '../../assets/comidaImage.jpg';
 import hotelesImage from '../../assets/hotelesImage.jpg';
 
 const Home = ({ email }) => {
-  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
 
@@ -51,11 +49,6 @@ const Home = ({ email }) => {
       <div className="home-content">
         <h1>Bienvenido</h1>
         <p>Hola, {email || 'invitado'}. ¡Bienvenido a la página principal!</p>
-        {!isAuthenticated && (
-          <button className="login-button" onClick={() => navigate('/login')}>
-            Iniciar sesión
-          </button>
-        )}
       </div>
       <div className="sections-grid">
         {[

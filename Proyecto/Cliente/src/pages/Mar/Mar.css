@@ -8,6 +8,12 @@ body {
   padding-bottom: 5rem; /* Espacio adicional para permitir desplazarse más */
 }
 
+/* Centrar el encabezado */
+.mar-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .section-card {
   display: flex;
   flex-direction: row;
@@ -20,10 +26,18 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Cambiar el diseño de las tarjetas para que estén una debajo de la otra */
+.sections-grid {
+  display: flex;
+  flex-direction: column; /* Asegura que las tarjetas estén en una columna */
+  gap: 1rem; /* Espacio entre las tarjetas */
+}
+
+/* Ajustar el tamaño de las imágenes en las tarjetas */
 .section-image {
-  width: 150px;
-  height: 100px;
-  object-fit: cover;
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+  height: 300px; /* Incrementar la altura de las imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen */
   border-radius: 5px;
 }
 

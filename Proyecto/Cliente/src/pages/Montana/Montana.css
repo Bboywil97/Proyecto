@@ -8,6 +8,12 @@ body {
   padding-bottom: 5rem; /* Espacio adicional para permitir desplazarse más */
 }
 
+/* Centrar el encabezado */
+.montana-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .section-card {
   display: flex;
   flex-direction: row;
@@ -52,4 +58,11 @@ body {
 
 .action-button:hover {
   background-color: #1e9e8c;
+}
+
+/* Cambiar el diseño de las tarjetas para que estén una debajo de la otra */
+.sections-grid {
+  display: flex;
+  flex-direction: column; /* Asegura que las tarjetas estén en una columna */
+  gap: 1rem; /* Espacio entre las tarjetas */
 }

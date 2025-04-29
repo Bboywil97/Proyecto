@@ -12,6 +12,7 @@
   box-sizing: border-box;
   text-align: center;
   padding-bottom: 5rem; /* Espacio adicional para que las últimas tarjetas sean visibles */
+  padding-top: 10rem; /* Más espacio superior */
 }
 
 .search-bar {
@@ -92,8 +93,9 @@
   color: #121212;
 }
 
+/* Mover el mensaje de bienvenida más abajo */
 .home-content {
-  margin-top: 2rem;
+  margin-top: 110rem; /* Incrementar el margen superior para que el mensaje sea visible */
   text-align: center;
 }
 
@@ -107,31 +109,13 @@
   margin-bottom: 2rem;
 }
 
-.login-button {
-  position: absolute;
-  top: 50%; /* Centrado verticalmente */
-  left: 50%; /* Centrado horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  color: #ffffff;
-  background-color: #30D5C8;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #1e9e8c;
-}
-
+/* Ajustar las tarjetas para que aparezcan de dos en dos */
 .sections-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
-  gap: 1rem;
+  gap: 1.5rem; /* Espacio entre las tarjetas */
   padding: 1rem;
-  margin-top: 8rem; /* Incremento de separación del buscador */
+  justify-content: center; /* Centrar las tarjetas */
 }
 
 .section-card {
@@ -140,6 +124,7 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px; /* Incrementar la altura de las tarjetas */
 }
 
 .section-card:hover {
@@ -148,9 +133,10 @@
   cursor: pointer;
 }
 
+/* Hacer las imágenes más grandes */
 .section-image {
   width: 100%;
-  height: 150px;
+  height: 300px; /* Incrementar la altura de las imágenes */
   object-fit: cover;
 }
 
@@ -169,6 +155,12 @@
   height: 50px;
   background-color: #1e1e1e; /* Color oscuro para coincidir con el diseño */
   z-index: 1000;
+}
+
+.welcome-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
 }
 
 @media (max-width: 768px) {

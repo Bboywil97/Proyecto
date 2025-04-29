@@ -7,3 +7,23 @@ body {
 .hoteles-container {
   padding-bottom: 5rem; /* Espacio adicional para permitir desplazarse más */
 }
+
+/* Centrar el encabezado */
+.hoteles-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Cambiar el diseño de las tarjetas para que estén una debajo de la otra */
+.sections-grid {
+  display: flex;
+  flex-direction: column; /* Asegura que las tarjetas estén en una columna */
+  gap: 1rem; /* Espacio entre las tarjetas */
+}
+
+/* Hacer las imágenes más grandes */
+.section-image {
+  width: 50%;
+  height: 200px; /* Incrementar la altura de las imágenes */
+  object-fit: cover;
+}

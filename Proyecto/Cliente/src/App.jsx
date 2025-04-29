@@ -17,6 +17,7 @@ import Pueblo from './pages/Pueblo/Pueblo.jsx';
 import Ciudad from './pages/Ciudad/Ciudad.jsx';
 import Comidas from './pages/Comidas/Comidas.jsx';
 import Hoteles from './pages/Hoteles/Hoteles.jsx';
+import Register from './pages/Register/Register.jsx';
 
 function App() {
   const ProtectedRoutes = () => {
@@ -54,6 +55,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/*" element={<ProtectedRoutes />} />
         </Routes>
       </Router>
