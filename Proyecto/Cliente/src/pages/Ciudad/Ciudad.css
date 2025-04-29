@@ -1,3 +1,9 @@
+/* Cambiar el fondo a oscuro */
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 .ciudad-container {
   padding-bottom: 5rem; /* Espacio adicional para permitir desplazarse más */
 }
