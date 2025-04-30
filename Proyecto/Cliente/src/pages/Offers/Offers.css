@@ -5,8 +5,10 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  background: url('/src/assets/offers.jpg') no-repeat center center fixed; /* Fondo personalizado */
-  background-size: cover;
+  background-image: url('/src/assets/home.jpg'); /* Ruta de la nueva imagen de fondo */
+  background-size: cover; /* Asegurar que la imagen cubra todo el contenedor */
+  background-position: center; /* Centrar la imagen de fondo */
+  background-repeat: no-repeat; /* Evitar que la imagen se repita */
   color: #2fd48f;
   font-family: 'Arial', sans-serif;
   text-align: center;
