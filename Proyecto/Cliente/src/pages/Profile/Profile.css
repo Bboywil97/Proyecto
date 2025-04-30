@@ -1,19 +1,63 @@
 .profile-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: #121212;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  background-color: #f4f4f9; /* Fondo claro y profesional */
+  font-family: 'Roboto', sans-serif; /* Tipografía moderna */
 }
 
-.profile-container h1 {
-  font-size: 2.5rem;
+.profile-card {
+  background-color: #ffffff; /* Fondo blanco para la tarjeta */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  border: 3px solid #6c5ce7; /* Borde con color primario */
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333333; /* Texto oscuro */
+  margin-bottom: 0.5rem;
+}
+
+.profile-email {
+  font-size: 1rem;
+  color: #666666; /* Texto gris */
   margin-bottom: 1rem;
 }
 
-.profile-container p {
-  font-size: 1.2rem;
+.profile-bio {
+  font-size: 1rem;
+  color: #888888; /* Texto gris claro */
+  margin-bottom: 1.5rem;
+}
+
+.edit-profile-button {
+  background-color: #6c5ce7; /* Color primario */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-profile-button:hover {
+  background-color: #5a4bcf; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de zoom */
 }
