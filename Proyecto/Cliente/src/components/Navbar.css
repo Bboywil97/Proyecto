@@ -1,14 +1,13 @@
 .navbar {
   position: fixed;
-  top: 0; /* Mover a la parte superior */
+  top: 0; /* Posicionar en la parte superior */
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #121212; /* Modo oscuro */
+  background: linear-gradient(90deg, #2fd48f, #1e1e1e); /* Gradiente verde a oscuro */
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar el header */
-  border-bottom: 3px solid #30D5C8; /* Línea de margen inferior */
   z-index: 1000; /* Asegurar que esté por encima de otros elementos */
 }
 
@@ -30,17 +29,18 @@
 }
 
 .navbar-button {
-  background-color: #1e1e1e; /* Botones en modo oscuro */
-  color: #ffffff;
-  border: 2px solid #30D5C8; /* Borde del color especificado */
-  border-radius: 5px;
+  background-color: transparent; /* Fondo transparente */
+  color: #ffffff; /* Texto blanco */
+  border: 2px solid #2fd48f; /* Borde verde */
+  border-radius: 20px; /* Bordes redondeados */
   padding: 10px 15px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-button:hover {
-  background-color: #30D5C8; /* Cambia el fondo al color especificado */
-  color: #121212; /* Cambia el texto a oscuro */
+  background-color: #2fd48f; /* Fondo verde al pasar el mouse */
+  color: #121212; /* Texto oscuro */
+  transform: scale(1.05); /* Efecto de zoom */
 }
