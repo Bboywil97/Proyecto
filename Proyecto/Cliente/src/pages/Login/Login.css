@@ -15,19 +15,20 @@
 /* Centrar el encabezado verticalmente arriba del formulario */
 .login-container {
   display: flex;
-  flex-direction: column; /* Asegura que el encabezado y el formulario estén en columnas */
-  justify-content: center; /* Centra el contenido verticalmente */
-  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-start; /* Alinea el contenido hacia la parte superior */
   height: 100vh;
   background-color: #121212;
   background-image: url('../../assets/login.jpg'); 
   background-size: cover;
   background-position: center;
+  padding: 3rem 0; /* Agrega espacio arriba y abajo */
 }
 
 .login-logo {
-  width: 150px; /* Ajusta el tamaño del logo */
-  margin-bottom: 1rem; /* Espacio entre el logo y el formulario */
+  width: 350px; /* Ajusta el tamaño del logo */
+  display: block;
+  margin: 0 auto -12rem; /* Centra el logo y ajusta el espacio debajo */
 }
 
 .logo-background {
@@ -41,14 +42,15 @@
 }
 
 .login-form {
-  background-color: #1e1e1e;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(30, 30, 30, 0.9); /* Fondo semitransparente */
+  padding: 1.5rem 2rem; /* Reduce el espacio interno superior e inferior */
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más suave */
   color: #ffffff;
   width: 100%;
   max-width: 400px;
-  margin-top: 1rem; /* Agrega un espacio entre el encabezado y el formulario */
+  text-align: center; /* Centra el contenido del formulario */
+  margin-top: -8rem; /* Ajusta la posición del formulario */
 }
 
 /* Centrar el texto del encabezado */
@@ -122,4 +124,11 @@
   left: 10px;
   font-size: 0.8rem;
   color: #30D5C8;
+}
+
+.google-icon {
+  width: 20px; /* Ajusta el tamaño del ícono */
+  height: 20px;
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  vertical-align: middle; /* Alinea el ícono con el texto */
 }

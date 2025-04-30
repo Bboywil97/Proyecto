@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/useAuth';
 import './Login.css';
+import logo from '../../assets/logo.png'; // Importa el logo
+import googleIcon from '../../assets/loggin/logo de google.png'; // Importa el ícono de Google
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -37,14 +39,13 @@ const Login = () => {
 
   return (
     <div className="login-container custom-background">
-      <div className="logo-background"></div> {/* Contenedor para el logo */}
-      <img 
-        src="../../assets/logo.png" 
-        alt="Logo" 
-        className="login-logo" 
-      />
-      <h1>Iniciar Sesión</h1>
       <form onSubmit={handleSubmit} className="login-form">
+        <img 
+          src={logo} /* Usa la imagen importada */
+          alt="Logo" 
+          className="login-logo" 
+        />
+        <h1>Iniciar Sesión</h1>
         <div className="form-group">
           <input
             type="email"
@@ -87,7 +88,7 @@ const Login = () => {
           onClick={() => alert('Registro con Google en desarrollo')}
         >
           <img
-            src="../../assets/loggin/logo de google.png"
+            src={googleIcon} /* Usa la imagen importada */
             alt="Google Icon"
             className="google-icon"
           />
