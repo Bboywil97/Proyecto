@@ -1,12 +1,42 @@
 .offers-container {
+  margin-top: 60px; /* Espacio para evitar que el encabezado cubra el contenido */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #121212;
-  color: #ffffff;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: url('/src/assets/offers.jpg') no-repeat center center fixed; /* Fondo personalizado */
+  background-size: cover;
+  color: #2fd48f;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
   padding: 2rem;
-  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  font-size: 3.5rem; /* Texto más grande */
+  font-family: 'Georgia', serif; /* Fuente elegante */
+  font-style: italic; /* Estilo cursivo */
+  color: #2fd48f; /* Texto verde */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+  margin: 1rem 0; /* Espaciado superior e inferior */
+}
+
+.offers-content h1 {
+  font-size: 3rem; /* Texto más grande */
+  font-family: 'Georgia', serif; /* Fuente cursiva y elegante */
+  font-style: italic; /* Aplicar estilo cursivo */
+  color: #ffffff; /* Texto blanco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destacar */
+  margin-bottom: 1rem;
+}
+
+.offers-content p {
+  font-size: 1.5rem; /* Texto más grande */
+  font-family: 'Arial', sans-serif; /* Fuente legible */
+  color: #f7f5f5; /* Texto gris claro */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+  margin-bottom: 2rem;
 }
 
 .offers-container h1 {

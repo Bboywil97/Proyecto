@@ -9,6 +9,7 @@
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar el header */
   z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+  height: 60px; /* Altura fija del encabezado */
 }
 
 .nav-item {

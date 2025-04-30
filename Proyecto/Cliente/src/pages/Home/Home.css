@@ -25,7 +25,7 @@ html {
   padding: 0; /* Eliminar padding adicional */
   box-sizing: border-box;
   text-align: center;
-  margin-top: 0; /* Asegurar que no haya margen superior */
+  margin-top: 60px; /* Espacio para evitar que el encabezado cubra el contenido */
 }
 
 body {
@@ -184,6 +184,15 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
+}
+
+.page-title {
+  font-size: 3.5rem; /* Texto más grande */
+  font-family: 'Georgia', serif; /* Fuente elegante */
+  font-style: italic; /* Estilo cursivo */
+  color: #2fd48f; /* Texto verde */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+  margin: 1rem 0; /* Espaciado superior e inferior */
 }
 
 @media (max-width: 768px) {

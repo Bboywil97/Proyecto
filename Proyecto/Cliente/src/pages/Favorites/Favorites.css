@@ -8,6 +8,7 @@
   background-color: #096958; /* Fondo claro para mejor contraste */
   color: #ae1616; /* Texto en color negro */
   font-family: Arial, sans-serif;
+  margin-top: 60px; /* Espacio para evitar que el encabezado cubra el contenido */
 }
 
 .favorites-container h1 {
