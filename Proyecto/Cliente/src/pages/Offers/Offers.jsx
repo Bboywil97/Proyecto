@@ -5,6 +5,11 @@ import oferta2Image from '../../assets/ofertas/Oferta2comida.jpg';
 import oferta3Image from '../../assets/ofertas/Oferta3comida.jpg';
 import oferta4Image from '../../assets/ofertas/Oferta4comida.jpg';
 import oferta5Image from '../../assets/ofertas/Oferta5comida.jpg';
+import oferta6Image from '../../assets/ofertas/Oferta6comida.jpg';
+import oferta7Image from '../../assets/ofertas/Ofertacomida7.jpg';
+import oferta8Image from '../../assets/ofertas/Ofertacomida8.jpg';
+import oferta9Image from '../../assets/ofertas/Ofertacomida9.jpg';
+import oferta10Image from '../../assets/ofertas/Oferta10comida.jpg';
 
 const Offers = () => {
   const [favorites, setFavorites] = useState(() => {
@@ -62,6 +67,56 @@ const Offers = () => {
       description: 'Disfruta de una variedad de bebidas refrescantes para acompañar tus comidas.',
       category: 'Bebidas',
       location: 'playa del mar, Zona Turística'
+    },
+    {
+      id: 6,
+      title: 'Tour en Lancha - Cañón del Sumidero',
+      image: oferta6Image,
+      normalPrice: '$2800',
+      discountPrice: '$1800',
+      description: 'Explora el majestuoso Cañón del Sumidero con un emocionante tour en lancha.',
+      category: 'Tours',
+      location: 'Cañón del Sumidero, Chiapas'
+    },
+    {
+      id: 7,
+      title: 'Excursión a las Ruinas de Palenque',
+      image: oferta7Image,
+      normalPrice: '$900',
+      discountPrice: '$650',
+      description: 'Explora las fascinantes ruinas de Palenque con guías especializados.',
+      category: 'Historia',
+      location: 'Ruinas de Palenque, Chiapas'
+    },
+    {
+      id: 8,
+      title: 'Excursión a Cascadas de Agua Azul',
+      image: oferta8Image,
+      normalPrice: '$700',
+      discountPrice: '$500',
+      description: 'Explora las impresionantes cascadas de Agua Azul con guías expertos.',
+      category: 'Naturaleza',
+      location: 'Cascadas de Agua Azul, Chiapas'
+    },
+    {
+      id: 9,
+      title: 'Oferta de Cata de Vinos',
+      image: oferta9Image,
+      normalPrice: '$600',
+      discountPrice: '$450',
+      description: 'Disfruta de una cata de vinos exclusivos en un ambiente elegante.',
+      category: 'Experiencias',
+      location: 'Viñedo del Sol, Zona Turística'
+    },
+    {
+      id: 10,
+      title: 'Clases de Surf en la Playa',
+      image: oferta10Image,
+      normalPrice: '$400',
+      discountPrice: '$300',
+      description: 'Aprende a surfear con instructores profesionales en la playa.',
+      category: 'Deportes',
+      location: 'Playa del Sol, Chiapas'
     }
   ];
 
