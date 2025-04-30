@@ -24,12 +24,13 @@
 .offers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem; /* Incrementar el espacio entre las tarjetas */
   width: 100%;
   max-width: 1200px;
 }
 
 .offer-card {
+  position: relative;
   background-color: #1e1e1e;
   border-radius: 10px;
   overflow: hidden;
@@ -69,4 +70,96 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: #30D5C8;
+}
+
+/* Ajuste para que la descripción no sea tapada por los botones */
+.offer-details {
+  padding-bottom: 5rem; /* Añadir espacio inferior para evitar que los botones tapen la descripción */
+}
+
+/* Ajuste para incluir los tres botones correctamente */
+.favorite-button {
+  position: absolute;
+  bottom: 3rem; /* Posicionar encima del botón de reservar */
+  left: 1rem; /* Posicionar a la izquierda */
+  width: 40%; /* Ajustar el ancho */
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.location-button {
+  position: absolute;
+  bottom: 3rem; /* Posicionar encima del botón de reservar */
+  right: 1rem; /* Posicionar a la derecha */
+  width: 40%; /* Ajustar el ancho */
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.85rem;
+}
+
+/* Ajuste para bajar un poco más el botón de reservar */
+.reserve-button {
+  position: absolute;
+  bottom: 0.2rem; /* Reducir aún más la distancia desde el borde inferior */
+  left: 50%;
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  width: 60%; /* Mantener el ancho */
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.offer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  height: auto;
+}
+
+/* Estilos para agregar color a los botones */
+.favorite-button {
+  background-color: #ff6b6b; /* Rojo para el botón de favorito */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.favorite-button:hover {
+  background-color: #ff4c4c; /* Rojo más oscuro al pasar el cursor */
+}
+
+.location-button {
+  background-color: #6b6bff; /* Azul para el botón de ubicación */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #4c4cff; /* Azul más oscuro al pasar el cursor */
+}
+
+.reserve-button {
+  background-color: #30D5C8; /* Verde para el botón de reservar */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+  background-color: #28b3a6; /* Verde más oscuro al pasar el cursor */
+}
+
+/* Ajuste para centrar la descripción dentro de las tarjetas */
+.offer-details p {
+  text-align: center; /* Centrar el texto de la descripción */
+  margin: 0 auto; /* Asegurar que esté centrado horizontalmente */
+  line-height: 1.5; /* Mejorar la legibilidad */
 }
