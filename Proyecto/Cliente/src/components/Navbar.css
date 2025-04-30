@@ -1,14 +1,15 @@
 .navbar {
   position: fixed;
-  bottom: 0;
+  top: 0; /* Mover a la parte superior */
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #121212; /* Modo oscuro */
   padding: 10px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  border-top: 3px solid #30D5C8; /* Línea de margen superior */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar el header */
+  border-bottom: 3px solid #30D5C8; /* Línea de margen inferior */
+  z-index: 1000; /* Asegurar que esté por encima de otros elementos */
 }
 
 .nav-item {

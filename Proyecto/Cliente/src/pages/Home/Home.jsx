@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import marImage from '../../assets/marImage.jpg';
@@ -10,16 +10,6 @@ import hotelesImage from '../../assets/hotelesImage.jpg';
 
 const Home = ({ email }) => {
   const navigate = useNavigate();
-  const [search, setSearch] = useState('');
-
-  const handleSearchChange = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    alert(`Buscando: ${search}`);
-  };
 
   const handleFilterClick = () => {
     navigate('/filter');
@@ -31,19 +21,9 @@ const Home = ({ email }) => {
 
   return (
     <div className="home-container">
-      <div className="top-bar"></div>
       <header className="home-header">
         <h1>X'inbal.com</h1>
       </header>
-      <form className="search-bar" onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          placeholder="Buscar..."
-          value={search}
-          onChange={handleSearchChange}
-        />
-        <button type="submit">Buscar</button>
-      </form>
       <button className="filter-button" onClick={handleFilterClick}>Filtros</button>
       <button className="settings-button" onClick={handleSettingsClick}>Ajustes</button>
       <div className="home-content">

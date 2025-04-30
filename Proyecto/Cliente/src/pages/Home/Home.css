@@ -1,57 +1,39 @@
+* {
+  margin: 0; /* Eliminar márgenes de todos los elementos */
+  padding: 0; /* Eliminar paddings de todos los elementos */
+  box-sizing: border-box; /* Asegurar que el box-sizing sea consistente */
+}
+
+html {
+  margin: 0; /* Eliminar márgenes del elemento html */
+  padding: 0; /* Eliminar paddings del elemento html */
+  height: 100%; /* Asegurar que html ocupe toda la altura */
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: flex-start; /* Alinear el contenido hacia la parte superior */
+  min-height: 100vh; /* Asegurar que el contenedor cubra al menos toda la altura de la ventana */
+  height: auto; /* Permitir que crezca según el contenido */
   width: 100vw;
-  background: #121212;
-  color: #ffffff;
+  background: url('/src/assets/home.jpg') no-repeat center center fixed; /* Ruta relativa desde la raíz del proyecto */
+  background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
+  color: #2fd48f;
   font-family: 'Arial', sans-serif;
-  padding: 1rem;
+  padding: 0; /* Eliminar padding adicional */
   box-sizing: border-box;
   text-align: center;
-  padding-bottom: 5rem; /* Espacio adicional para que las últimas tarjetas sean visibles */
-  padding-top: 10rem; /* Más espacio superior */
+  margin-top: 0; /* Asegurar que no haya margen superior */
 }
 
-.search-bar {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  background-color: #1e1e1e;
-  border: 2px solid #30D5C8;
-  border-radius: 25px;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  width: 90%;
-  max-width: 500px;
-}
-
-.search-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
-  font-size: 1rem;
-  padding-left: 0.5rem;
-}
-
-.search-bar input::placeholder {
-  color: #ccc;
-}
-
-.search-bar button {
-  background: none;
-  border: none;
-  color: #30D5C8;
-  font-size: 1.2rem;
-  cursor: pointer;
+body {
+  margin: 0; /* Eliminar márgenes del body */
+  padding: 0; /* Eliminar paddings del body */
+  background: none; /* Asegurar que no haya fondo adicional */
+  height: 100%; /* Asegurar que el body ocupe toda la altura */
+  overflow-x: hidden; /* Evitar desplazamiento horizontal */
 }
 
 .filter-button {
@@ -60,18 +42,19 @@
   left: calc(50% - 350px); /* Más separado hacia la izquierda */
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
-  color: #ffffff;
-  background-color: transparent;
-  border: 2px solid #30D5C8;
-  border-radius: 5px;
+  color: #2fd48f; /* Texto verde */
+  background-color: #ffffff; /* Fondo blanco */
+  border: 2px solid #2fd48f; /* Borde verde */
+  border-radius: 20px; /* Bordes redondeados */
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
   transition: background-color 0.3s ease, color 0.3s ease;
   width: calc(70px); /* Ajuste para que el botón de filtros tenga el mismo largo que el buscador */
 }
 
 .filter-button:hover {
-  background-color: #30D5C8;
-  color: #121212;
+  background-color: #2fd48f; /* Fondo verde al pasar el mouse */
+  color: #ffffff; /* Texto blanco */
 }
 
 .settings-button {
@@ -95,7 +78,10 @@
 
 /* Mover el mensaje de bienvenida más abajo */
 .home-content {
-  margin-top: 110rem; /* Incrementar el margen superior para que el mensaje sea visible */
+  margin-top: 2rem; /* Reducir el margen superior */
+  padding: 1rem; /* Agregar espacio interno */
+  width: 100%;
+  max-width: 1200px; /* Limitar el ancho máximo */
   text-align: center;
 }
 
@@ -111,25 +97,24 @@
 
 /* Ajustar las tarjetas para que aparezcan de dos en dos */
 .sections-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
-  gap: 1.5rem; /* Espacio entre las tarjetas */
-  padding: 1rem;
-  justify-content: center; /* Centrar las tarjetas */
+  display: none; /* Ocultar la sección de sugerencias */
 }
 
 .section-card {
-  background-color: #2d2d2d;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #333; /* Texto oscuro */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  border: 2px solid #2fd48f; /* Borde verde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   height: 300px; /* Incrementar la altura de las tarjetas */
 }
 
 .section-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: #f0f0f0; /* Fondo gris claro al pasar el mouse */
+  transform: translateY(-5px); /* Efecto de elevación */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
   cursor: pointer;
 }
 
