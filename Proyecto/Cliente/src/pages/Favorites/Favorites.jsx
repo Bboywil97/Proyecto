@@ -9,22 +9,36 @@ const Favorites = () => {
     setFavorites(storedFavorites);
   }, []);
 
+  const removeFavorite = (id) => {
+    const updatedFavorites = favorites.filter((favorite) => favorite.id !== id);
+    setFavorites(updatedFavorites);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  };
+
   return (
     <div className="favorites-container">
       <h1>Favoritos</h1>
       {favorites.length === 0 ? (
-        <p>Aquí puedes ver tus elementos favoritos.</p>
+        <p>No tienes elementos en tu lista de favoritos.</p>
       ) : (
-        <ul>
-          {favorites.map((favorite, index) => (
-            <li key={index}>
-              <h2>{favorite.title}</h2>
-              <img src={favorite.image} alt={favorite.title} style={{ width: '100px' }} />
-              <p>Precio Normal: {favorite.normalPrice}</p>
-              <p>Precio con Descuento: {favorite.discountPrice}</p>
-            </li>
+        <div className="favorites-grid">
+          {favorites.map((favorite) => (
+            <div key={favorite.id} className="favorite-card">
+              <img src={favorite.image} alt={favorite.title} className="favorite-image" />
+              <div className="favorite-details">
+                <h2>{favorite.title}</h2>
+                <p>Precio Normal: {favorite.normalPrice}</p>
+                <p>Precio con Descuento: {favorite.discountPrice}</p>
+                <button
+                  className="remove-favorite-button"
+                  onClick={() => removeFavorite(favorite.id)}
+                >
+                  Eliminar de Favoritos
+                </button>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
