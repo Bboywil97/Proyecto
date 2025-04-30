@@ -2,7 +2,7 @@
 :root {
   --primary-color: #6c5ce7;
   --secondary-color: #00cec9;
-  --text-color: #ffffff;
+  --text-color:rgb(0, 0, 0);
 }
 
 * {
