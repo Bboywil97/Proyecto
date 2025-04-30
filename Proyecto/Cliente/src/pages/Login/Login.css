@@ -20,6 +20,24 @@
   align-items: center; /* Centra el contenido horizontalmente */
   height: 100vh;
   background-color: #121212;
+  background-image: url('../../assets/login.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.login-logo {
+  width: 150px; /* Ajusta el tamaño del logo */
+  margin-bottom: 1rem; /* Espacio entre el logo y el formulario */
+}
+
+.logo-background {
+  width: 100px;
+  height: 150px;
+  background-image: url('../../assets/logo.png'); /* URL del logo */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 1rem; /* Espacio entre el logo y el formulario */
 }
 
 .login-form {
