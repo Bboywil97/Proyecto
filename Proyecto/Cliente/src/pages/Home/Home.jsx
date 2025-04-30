@@ -77,17 +77,6 @@ const Home = ({ email }) => {
           </div>
         ))}
       </div>
-      <div className="suggestions">
-        <h2>Sugerencias</h2>
-        <ul>
-          <li onClick={() => navigate('/mar')}>Explora el Mar</li>
-          <li onClick={() => navigate('/montana')}>Descubre la Montaña</li>
-          <li onClick={() => navigate('/pueblo')}>Visita un Pueblo</li>
-          <li onClick={() => navigate('/ciudad')}>Conoce la Ciudad</li>
-          <li onClick={() => navigate('/comidas')}>Prueba las Comidas</li>
-          <li onClick={() => navigate('/hoteles')}>Encuentra Hoteles</li>
-        </ul>
-      </div>
     </div>
   );
 };
