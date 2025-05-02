@@ -10,11 +10,20 @@ import oferta7Image from '../../assets/ofertas/Ofertacomida7.jpg';
 import oferta8Image from '../../assets/ofertas/Ofertacomida8.jpg';
 import oferta9Image from '../../assets/ofertas/Ofertacomida9.jpg';
 import oferta10Image from '../../assets/ofertas/Oferta10comida.jpg';
+import oferta11Image from '../../assets/ofertas/ofertacomida11.jpg';
+import oferta12Image from '../../assets/ofertas/ofertacomida12.jpg';
+import oferta13Image from '../../assets/ofertas/ofertacomida13.jpg';
+import oferta14Image from '../../assets/ofertas/ofertacomida14.jpg';
 
 const Offers = () => {
   const [favorites, setFavorites] = useState(() => {
     const storedFavorites = localStorage.getItem('favorites');
     return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
+
+  const [reservations, setReservations] = useState(() => {
+    const storedReservations = localStorage.getItem('reservations');
+    return storedReservations ? JSON.parse(storedReservations) : [];
   });
 
   const offers = [
@@ -117,6 +126,46 @@ const Offers = () => {
       description: 'Aprende a surfear con instructores profesionales en la playa.',
       category: 'Deportes',
       location: 'Playa del Sol, Chiapas'
+    },
+    {
+      id: 11,
+      title: 'Tour a San Cristóbal de las Casas',
+      image: oferta11Image,
+      normalPrice: '$800',
+      discountPrice: '$600',
+      description: 'Descubre la magia de San Cristóbal de las Casas con un tour guiado por sus calles coloniales.',
+      category: 'Cultura',
+      location: 'San Cristóbal de las Casas, Chiapas'
+    },
+    {
+      id: 12,
+      title: 'Visita a las Lagunas de Montebello',
+      image: oferta12Image,
+      normalPrice: '$1000',
+      discountPrice: '$750',
+      description: 'Explora las impresionantes lagunas de Montebello con sus aguas cristalinas y paisajes únicos.',
+      category: 'Naturaleza',
+      location: 'Lagunas de Montebello, Chiapas'
+    },
+    {
+      id: 13,
+      title: 'Tour a la Selva Lacandona',
+      image: oferta13Image,
+      normalPrice: '$1200',
+      discountPrice: '$900',
+      description: 'Adéntrate en la Selva Lacandona y descubre su flora, fauna y cultura ancestral.',
+      category: 'Aventura',
+      location: 'Selva Lacandona, Chiapas'
+    },
+    {
+      id: 14,
+      title: 'Clases de Artesanías en Chiapa de Corzo',
+      image: oferta14Image,
+      normalPrice: '$400',
+      discountPrice: '$300',
+      description: 'Aprende a crear artesanías tradicionales con artesanos locales en Chiapa de Corzo.',
+      category: 'Cultura',
+      location: 'Chiapa de Corzo, Chiapas'
     }
   ];
 
@@ -124,6 +173,12 @@ const Offers = () => {
     const updatedFavorites = [...favorites, offer];
     setFavorites(updatedFavorites);
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  };
+
+  const handleReserve = (offer) => {
+    const updatedReservations = [...reservations, offer];
+    setReservations(updatedReservations);
+    localStorage.setItem('reservations', JSON.stringify(updatedReservations));
   };
 
   return (
@@ -147,7 +202,7 @@ const Offers = () => {
             </button>
             <button
               className="reserve-button"
-              onClick={() => console.log(`Reserva realizada para la oferta ${offer.id}`)}
+              onClick={() => handleReserve(offer)}
             >
               Reservar
             </button>
