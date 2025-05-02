@@ -121,7 +121,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Espaciado interno */
+  justify-content: center; /* Centrar el contenido verticalmente */
   padding: 1rem; /* Espaciado interno */
   position: relative; /* Para posicionar elementos internos */
   text-align: center; /* Centrar el texto */
@@ -144,7 +144,8 @@ body {
   font-size: 1.8rem; /* Texto más grande */
   font-weight: bold;
   color: #2fd48f; /* Texto verde */
-  text-align: center;
+  text-align: center; /* Centrar el texto */
+  margin: auto; /* Centrar verticalmente */
   margin: 0.5rem 0; /* Espaciado entre el título y otros elementos */
 }
 
