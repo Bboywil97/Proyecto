@@ -9,6 +9,12 @@ const Reservations = () => {
     setReservations(storedReservations);
   }, []);
 
+  const handleDelete = (index) => {
+    const updatedReservations = reservations.filter((_, i) => i !== index);
+    setReservations(updatedReservations);
+    localStorage.setItem('reservations', JSON.stringify(updatedReservations));
+  };
+
   return (
     <div className="reservations-container">
       <h1>Mis Reservas</h1>
@@ -24,6 +30,12 @@ const Reservations = () => {
                 <p>Precio: {reservation.discountPrice}</p>
                 <p>Ubicación: {reservation.location}</p>
               </div>
+              <button
+                className="delete-reservation-button"
+                onClick={() => handleDelete(index)}
+              >
+                Eliminar
+              </button>
             </div>
           ))}
         </div>

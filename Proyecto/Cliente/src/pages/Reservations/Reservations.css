@@ -75,3 +75,19 @@
   margin-bottom: 0.5rem;
   color: #666;
 }
+
+.delete-reservation-button {
+  background-color: #ff6b6b; /* Rojo para el botón de eliminar */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem; /* Separar el botón del contenido */
+}
+
+.delete-reservation-button:hover {
+  background-color: #ff4c4c; /* Rojo más oscuro al pasar el cursor */
+}

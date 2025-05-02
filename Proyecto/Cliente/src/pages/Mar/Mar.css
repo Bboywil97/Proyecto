@@ -2,35 +2,64 @@
 body {
   background-color: #121212;
   color: #ffffff;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna y elegante */
+  background-image: url('/src/assets/mar-background.jpg'); /* Fondo personalizado */
+  background-size: cover; /* Asegurar que el fondo cubra toda la pantalla */
+  background-position: center; /* Centrar el fondo */
+  background-repeat: no-repeat; /* Evitar que el fondo se repita */
 }
 
 .mar-container {
   padding-bottom: 5rem; /* Espacio adicional para permitir desplazarse más */
+  margin-top: 60px; /* Espacio para evitar que el encabezado cubra el contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrar el contenido verticalmente */
+  text-align: center; /* Centrar el texto */
+  padding: 2rem; /* Espaciado interno */
+  gap: 2rem; /* Espaciado entre elementos */
 }
 
 /* Centrar el encabezado */
 .mar-container h1 {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 3rem; /* Texto más grande */
+  font-weight: bold;
+  color: #30D5C8; /* Color llamativo */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
 }
 
 .section-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Alinear el contenido verticalmente */
   align-items: center;
-  justify-content: space-between;
-  background-color: #1e1e1e;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
   border-radius: 10px;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 1.5rem; /* Espaciado interno */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #30D5C8; /* Borde llamativo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto; /* Permitir que la tarjeta ajuste su altura según el contenido */
+  min-height: 200px; /* Establecer una altura mínima para las tarjetas */
+}
+
+.section-card:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
 /* Cambiar el diseño de las tarjetas para que estén una debajo de la otra */
 .sections-grid {
   display: flex;
   flex-direction: column; /* Asegura que las tarjetas estén en una columna */
-  gap: 1rem; /* Espacio entre las tarjetas */
 }
 
 /* Ajustar el tamaño de las imágenes en las tarjetas */
@@ -39,12 +68,15 @@ body {
   height: 300px; /* Incrementar la altura de las imágenes */
   object-fit: cover; /* Mantiene la proporción de la imagen */
   border-radius: 5px;
+  border: 3px solid #30D5C8; /* Borde llamativo alrededor de la imagen */
 }
 
 .section-details {
   flex: 1;
   margin-left: 1rem;
   color: #ffffff;
+  text-align: center; /* Centrar el texto dentro de los detalles */
+  padding: 1rem; /* Añadir espacio interno para mejor visibilidad */
 }
 
 .section-actions {
@@ -54,16 +86,18 @@ body {
 }
 
 .action-button {
-  background-color: #30D5C8;
-  color: #121212;
+  background-color: #30D5C8; /* Color llamativo */
+  color: #ffffff;
   border: none;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   font-size: 0.9rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .action-button:hover {
-  background-color: #1e9e8c;
+  background-color: #28a475; /* Color más oscuro al pasar el cursor */
+  transform: scale(1.1); /* Efecto de zoom */
 }
