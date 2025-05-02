@@ -45,3 +45,23 @@
   color: #121212; /* Texto oscuro */
   transform: scale(1.05); /* Efecto de zoom */
 }
+
+.settings-button {
+  font-size: 1.2rem; /* Tamaño del ícono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.settings-button i {
+  color: #ffffff; /* Color del ícono */
+}
+
+.settings-button:hover i {
+  color: #30D5C8; /* Color llamativo al pasar el cursor */
+  transform: rotate(90deg); /* Efecto de rotación */
+}

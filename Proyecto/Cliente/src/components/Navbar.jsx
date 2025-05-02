@@ -12,6 +12,9 @@ const Navbar = () => {
       <button className="navbar-button" onClick={() => navigate('/offers')}>Ofertas</button>
       <button className="navbar-button" onClick={() => navigate('/profile')}>Perfil</button>
       <button className="navbar-button" onClick={() => navigate('/reservations')}>Reservaciones</button>
+      <button className="navbar-button settings-button" onClick={() => navigate('/settings')}>
+        <i className="fas fa-cog"></i> {/* Ícono de tuerca */}
+      </button>
     </div>
   );
 };

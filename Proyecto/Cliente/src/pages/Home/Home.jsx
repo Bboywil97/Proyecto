@@ -15,17 +15,12 @@ const Home = ({ email }) => {
     navigate('/filter');
   };
 
-  const handleSettingsClick = () => {
-    navigate('/settings');
-  };
-
   return (
     <div className="home-container">
       <header className="home-header">
         <h1 className="page-title">X'inbal.com</h1>
       </header>
       <button className="filter-button" onClick={handleFilterClick}>Filtros</button>
-      <button className="settings-button" onClick={handleSettingsClick}>Ajustes</button>
       <div className="home-content">
         <h1>Bienvenido</h1>
         <p>Hola, {email || 'invitado'}. ¡Bienvenido a la página principal!</p>
