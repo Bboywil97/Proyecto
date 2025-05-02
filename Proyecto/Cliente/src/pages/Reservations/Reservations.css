@@ -9,6 +9,11 @@
   color: #333; /* Texto oscuro */
   font-family: Arial, sans-serif;
   text-align: center; /* Centrar todo el texto dentro del contenedor */
+  background-image: url('/src/assets/home.jpg'); /* Ruta de la nueva imagen de fondo */
+  background-size: cover; /* Asegurar que la imagen cubra todo el contenedor */
+  background-position: center; /* Centrar la imagen de fondo */
+  background-repeat: no-repeat; /* Evitar que la imagen se repita */
+  margin-top: 60px; /* Espacio para evitar que el encabezado cubra el contenido */
 }
 
 /* Ajuste para centrar el título de "Mis Reservaciones" de manera similar a "Ofertas" */
