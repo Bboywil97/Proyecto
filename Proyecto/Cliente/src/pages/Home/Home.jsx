@@ -32,12 +32,12 @@ const Home = ({ email }) => {
       </div>
       <div className="sections-grid">
         {[
-          { title: 'Mar', image: marImage, path: '/mar', description: 'Explora las playas más hermosas.' },
-          { title: 'Montaña', image: montanaImage, path: '/montana', description: 'Descubre paisajes montañosos únicos.' },
-          { title: 'Pueblo', image: puebloImage, path: '/pueblo', description: 'Visita pueblos mágicos llenos de historia.' },
-          { title: 'Ciudad', image: ciudadImage, path: '/ciudad', description: 'Conoce las ciudades más vibrantes.' },
-          { title: 'Comidas', image: comidaImage, path: '/comidas', description: 'Prueba la gastronomía local.' },
-          { title: 'Hoteles', image: hotelesImage, path: '/hoteles', description: 'Encuentra los mejores hoteles para tu estancia.' }
+          { title: 'Mar', image: marImage, path: '/mar' },
+          { title: 'Montaña', image: montanaImage, path: '/montana' },
+          { title: 'Pueblo', image: puebloImage, path: '/pueblo' },
+          { title: 'Ciudad', image: ciudadImage, path: '/ciudad' },
+          { title: 'Comidas', image: comidaImage, path: '/comidas' },
+          { title: 'Hoteles', image: hotelesImage, path: '/hoteles' }
         ].map((section, index) => (
           <div
             key={index}
@@ -47,7 +47,6 @@ const Home = ({ email }) => {
           >
             <img src={section.image} alt={section.title} className="section-image" />
             <div className="section-title">{section.title}</div>
-            <div className="section-description">{section.description}</div>
             <button className="section-button" onClick={(e) => {
               e.stopPropagation(); // Evitar que el clic en el botón navegue
               navigate(section.path);
