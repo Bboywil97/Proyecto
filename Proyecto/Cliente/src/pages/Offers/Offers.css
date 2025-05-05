@@ -9,7 +9,7 @@
   background-size: cover; /* Asegurar que la imagen cubra todo el contenedor */
   background-position: center; /* Centrar la imagen de fondo */
   background-repeat: no-repeat; /* Evitar que la imagen se repita */
-  color: #2fd48f;
+  color: #30D5C8;
   font-family: 'Arial', sans-serif;
   text-align: center;
   padding: 2rem;
@@ -19,7 +19,7 @@
   font-size: 3.5rem; /* Texto más grande */
   font-family: 'Georgia', serif; /* Fuente elegante */
   font-style: italic; /* Estilo cursivo */
-  color: #2fd48f; /* Texto verde */
+  color: #30D5C8; /* Texto verde */
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
   margin: 1rem 0; /* Espaciado superior e inferior */
 }

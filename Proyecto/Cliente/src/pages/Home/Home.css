@@ -18,9 +18,8 @@ html {
   min-height: 100vh; /* Asegurar que el contenedor cubra al menos toda la altura de la ventana */
   height: auto; /* Permitir que crezca según el contenido */
   width: 100vw;
-  background: url('/src/assets/home.jpg') no-repeat center center fixed; /* Ruta relativa desde la raíz del proyecto */
-  background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
-  color: #2fd48f;
+  background: #121212; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco para contraste */
   font-family: 'Arial', sans-serif;
   padding: 0; /* Eliminar padding adicional */
   box-sizing: border-box;
@@ -42,9 +41,9 @@ body {
   left: calc(50% - 350px); /* Más separado hacia la izquierda */
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
-  color: #2fd48f; /* Texto verde */
+  color: #30D5C8; /* Texto verde */
   background-color: #ffffff; /* Fondo blanco */
-  border: 2px solid #2fd48f; /* Borde verde */
+  border: 2px solid #30D5C8; /* Borde verde */
   border-radius: 20px; /* Bordes redondeados */
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
@@ -53,7 +52,7 @@ body {
 }
 
 .filter-button:hover {
-  background-color: #2fd48f; /* Fondo verde al pasar el mouse */
+  background-color: #30D5C8; /* Fondo verde al pasar el mouse */
   color: #ffffff; /* Texto blanco */
 }
 
@@ -115,7 +114,7 @@ body {
   border-radius: 15px; /* Bordes más redondeados */
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-  border: 2px solid #2fd48f; /* Borde verde */
+  border: 2px solid #30D5C8; /* Borde verde */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   height: 150px; /* Asegurar una altura uniforme */
   display: flex;
@@ -143,7 +142,7 @@ body {
 .section-title {
   font-size: 1.8rem; /* Texto más grande */
   font-weight: bold;
-  color: #2fd48f; /* Texto verde */
+  color: #30D5C8; /* Texto verde */
   text-align: center; /* Centrar el texto */
   margin: auto; /* Centrar verticalmente */
   margin: 0.5rem 0; /* Espaciado entre el título y otros elementos */
@@ -158,7 +157,7 @@ body {
 }
 
 .section-button {
-  background-color: #2fd48f; /* Botón verde */
+  background-color: #30D5C8; /* Botón verde */
   color: #ffffff; /* Texto blanco */
   border: none;
   border-radius: 10px; /* Bordes redondeados */
@@ -191,7 +190,7 @@ body {
   font-size: 3.5rem; /* Texto más grande */
   font-family: 'Georgia', serif; /* Fuente elegante */
   font-style: italic; /* Estilo cursivo */
-  color: #2fd48f; /* Texto verde */
+  color: #30D5C8; /* Texto verde */
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
   margin: 1rem 0; /* Espaciado superior e inferior */
 }

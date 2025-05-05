@@ -5,11 +5,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: linear-gradient(90deg, #2fd48f, #1e1e1e); /* Gradiente verde a oscuro */
+  background: #121212; /* Fondo oscuro */
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar el header */
   z-index: 1000; /* Asegurar que esté por encima de otros elementos */
   height: 60px; /* Altura fija del encabezado */
+  border-bottom: 2px solid #30D5C8; /* Línea verde para coincidir con los botones */
 }
 
 .nav-item {
@@ -32,7 +33,7 @@
 .navbar-button {
   background-color: transparent; /* Fondo transparente */
   color: #ffffff; /* Texto blanco */
-  border: 2px solid #2fd48f; /* Borde verde */
+  border: 2px solid #30D5C8; /* Borde verde */
   border-radius: 20px; /* Bordes redondeados */
   padding: 10px 15px;
   font-size: 1rem;
@@ -41,7 +42,7 @@
 }
 
 .navbar-button:hover {
-  background-color: #2fd48f; /* Fondo verde al pasar el mouse */
+  background-color: #30D5C8; /* Fondo verde al pasar el mouse */
   color: #121212; /* Texto oscuro */
   transform: scale(1.05); /* Efecto de zoom */
 }
