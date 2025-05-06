@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Importar axios
 import { useAuth } from '../../context/useAuth';
 import './Login.css';
 import logo from '../../assets/logo.png'; // Importa el logo
@@ -8,33 +9,32 @@ import googleIcon from '../../assets/loggin/logo de google.png'; // Importa el �
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!email || !password) {
-      alert('Por favor, completa todos los campos.');
-      return;
-    }
-
+    setError('');
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/usuarios/login', {
+        email,
+        password,
+      });
+
+      if (response.data.success) {
+        login(response.data.user); // Guardar los datos del usuario en el contexto
+        navigate('/home', { replace: true });
+      }
+    } catch (err) {
+      console.error(err);
+      setError(err.response?.data?.error || 'Error al iniciar sesión');
+    } finally {
       setIsSubmitting(false);
-      login(email);
-      navigate('/home', { replace: true });
-    }, 1500);
+    }
   };
 
   return (
@@ -46,12 +46,13 @@ const Login = () => {
           className="login-logo" 
         />
         <h1>Iniciar Sesión</h1>
+        {error && <p className="error-message">{error}</p>}
         <div className="form-group">
           <input
             type="email"
             id="email"
             value={email}
-            onChange={handleEmailChange}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder=" "
             required
           />
@@ -62,7 +63,7 @@ const Login = () => {
             type="password"
             id="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder=" "
             required
           />
