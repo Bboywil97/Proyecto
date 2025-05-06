@@ -1,4 +1,6 @@
-const pool = require('../bd'); // Misma ruta relativa
+const pool = require('../bd'); // Conexión a la base de datos
+const bcrypt = require('bcrypt'); // Importar bcrypt para encriptar contraseñas
+
 class Usuario {
     static async crear(usuarioData) {
         // Validación básica
@@ -31,7 +33,7 @@ class Usuario {
             ]
         );
 
-        return result.insertId;
+        return result.insertId; // Retorna el ID del usuario insertado
     }
 
     static async obtenerTodos() {
@@ -57,7 +59,7 @@ class Usuario {
 
     static async obtenerPorEmail(email) {
         const [rows] = await pool.query('SELECT * FROM usuarios WHERE email = ?', [email]);
-        return rows[0];
+        return rows[0]; // Devuelve el primer resultado o undefined si no hay resultados
     }
 }
 
