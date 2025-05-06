@@ -18,6 +18,7 @@ html {
   min-height: 100vh; /* Asegurar que el contenedor cubra al menos toda la altura de la ventana */
   height: auto; /* Permitir que crezca según el contenido */
   width: 100vw;
+  /* Aquí puedes cambiar el color de fondo del contenedor principal */
   background: #121212; /* Fondo oscuro */
   color: #ffffff; /* Texto blanco para contraste */
   font-family: 'Arial', sans-serif;

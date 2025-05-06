@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* Aquí puedes cambiar el color de fondo de la barra de navegación */
   background: #121212; /* Fondo oscuro */
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar el header */
