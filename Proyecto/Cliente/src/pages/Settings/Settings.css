@@ -139,19 +139,22 @@ input:checked + .slider:before {
 }
 
 .settings-button {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  border: 2px solid #30D5C8;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #30D5C8; /* Fondo verde */
+  color: #ffffff; /* Texto blanco */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño del texto */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
 }
 
 .settings-button:hover {
-  background-color: #30D5C8;
-  color: #121212;
+  background-color: #28b3a6; /* Fondo más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
 .apply-settings-button {

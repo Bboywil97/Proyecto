@@ -38,12 +38,12 @@ body {
 
 .filter-button {
   position: fixed;
-  top: 10px;
-  left: calc(50% - 350px); /* Más separado hacia la izquierda */
+  top: 80px;
+  right: 40px; /* Más separado hacia la izquierda */
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
   color: #30D5C8; /* Texto verde */
-  background-color: #ffffff; /* Fondo blanco */
+  background-color: #121212; /* Fondo blanco */
   border: 2px solid #30D5C8; /* Borde verde */
   border-radius: 20px; /* Bordes redondeados */
   cursor: pointer;
@@ -55,25 +55,6 @@ body {
 .filter-button:hover {
   background-color: #30D5C8; /* Fondo verde al pasar el mouse */
   color: #ffffff; /* Texto blanco */
-}
-
-.settings-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: transparent;
-  border: 2px solid #30D5C8;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.settings-button:hover {
-  background-color: #30D5C8;
-  color: #121212;
 }
 
 /* Mover el mensaje de bienvenida más abajo */
@@ -105,6 +86,7 @@ body {
 /* Ajustar las tarjetas para que aparezcan de dos en dos */
 .sections-grid {
   display: none; /* Ocultar la sección de sugerencias */
+  text-align: center; /* Centrar el texto */
 }
 
 .section-card {
@@ -157,17 +139,6 @@ body {
   padding: 0 1rem; /* Espaciado interno */
 }
 
-.section-button {
-  background-color: #30D5C8; /* Botón verde */
-  color: #ffffff; /* Texto blanco */
-  border: none;
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
 .section-button:hover {
   background-color: #28a475; /* Cambiar color al pasar el mouse */
   transform: scale(1.05); /* Efecto de zoom */
@@ -194,6 +165,19 @@ body {
   color: #30D5C8; /* Texto verde */
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
   margin: 1rem 0; /* Espaciado superior e inferior */
+}
+
+.home-card {
+  text-align: center; /* Centrar el texto de las tarjetas */
+  margin: 0 auto; /* Asegurar que esté centrado horizontalmente */
+  line-height: 1.5; /* Mejorar la legibilidad */
+  padding: 1rem; /* Espaciado interno */
+}
+
+.home-card-description {
+  font-size: 1rem; /* Tamaño del texto de la descripción */
+  color: #cccccc; /* Texto gris claro */
+  margin-top: 0.5rem; /* Espaciado entre el título y la descripción */
 }
 
 @media (max-width: 768px) {
