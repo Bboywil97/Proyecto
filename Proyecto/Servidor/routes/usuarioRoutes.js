@@ -1,10 +1,17 @@
 const express = require('express');
-const { check } = require('express-validator');
+const { check, validationResult } = require('express-validator');
 const usuarioController = require('../controllers/usuarioController');
-const validarCampos = require('../middlewares/validationMiddleware');
 const verificarToken = require('../middlewares/authMiddleware');
 
 const router = express.Router();
+
+const validarCampos = (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+};
 
 // Ruta de registro
 router.post('/registro', 

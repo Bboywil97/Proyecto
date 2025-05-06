@@ -12,8 +12,11 @@ exports.registrarUsuario = async (req, res) => {
     const { nombre, email, password } = req.body;
   
     try {
+        // Normalizar el email
+        const normalizedEmail = email.trim().toLowerCase();
+        
         // Verificar si el usuario ya existe
-        let usuario = await Usuario.obtenerPorEmail(email);
+        let usuario = await Usuario.obtenerPorEmail(normalizedEmail);
         if (usuario) {
             return res.status(400).json({ 
                 success: false,
@@ -28,7 +31,7 @@ exports.registrarUsuario = async (req, res) => {
         // Crear nuevo usuario
         const nuevoUsuario = {
             nombre,
-            email,
+            email: normalizedEmail,
             password: passwordHash, // Cambiado a passwordHash
             rol: 'usuario'
         };
@@ -44,7 +47,7 @@ exports.registrarUsuario = async (req, res) => {
             user: {
                 id: usuarioId,
                 nombre,
-                email,
+                email: normalizedEmail,
                 rol: 'usuario'
             }
         });
@@ -62,8 +65,11 @@ exports.iniciarSesion = async (req, res) => {
     const { email, password } = req.body;
 
     try {
+        // Normalizar el email
+        const normalizedEmail = email.trim().toLowerCase();
+        
         // Verificar si el usuario existe
-        const usuario = await Usuario.obtenerPorEmail(email);
+        const usuario = await Usuario.obtenerPorEmail(normalizedEmail);
         if (!usuario) {
             return res.status(404).json({ success: false, error: 'Usuario no encontrado' });
         }
@@ -153,3 +159,14 @@ exports.obtenerPerfil = async (req, res) => {
         res.status(500).json({ success: false, error: 'Error en el servidor' });
     }
 };
+
+const password = '123456'; // Contraseña ingresada
+const hash = '$2b$10$...'; // Hash almacenado en la base de datos
+
+bcrypt.compare(password, hash, (err, result) => {
+    if (err) {
+        console.error('Error al comparar:', err);
+    } else {
+        console.log('¿Contraseña válida?', result);
+    }
+});
