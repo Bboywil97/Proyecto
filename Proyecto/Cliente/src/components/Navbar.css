@@ -66,3 +66,19 @@
   color: #30D5C8; /* Color llamativo al pasar el cursor */
   transform: rotate(90deg); /* Efecto de rotación */
 }
+
+.logout-button {
+  background-color: #ff4d4d; /* Fondo rojo */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #cc0000; /* Fondo rojo oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de zoom */
+}

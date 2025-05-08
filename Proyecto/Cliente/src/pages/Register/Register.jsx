@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import axios from 'axios'; // Importar axios
 import './Register.css';
 
@@ -8,6 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate(); // Hook para redirigir
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ const Register = () => {
       if (response.data.success) {
         setSuccess(true);
         alert('Usuario registrado con éxito');
+        navigate('/login'); // Redirigir al login después del registro
       }
     } catch (err) {
       console.error(err);
@@ -65,6 +68,13 @@ const Register = () => {
           />
         </div>
         <button type="submit">Registrarse</button>
+        <button
+          type="button"
+          className="go-to-login-button"
+          onClick={() => navigate('/login')} // Botón para ir manualmente al login
+        >
+          Ir al Login
+        </button>
       </form>
     </div>
   );
