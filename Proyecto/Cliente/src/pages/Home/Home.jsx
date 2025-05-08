@@ -42,12 +42,6 @@ const Home = ({ email }) => {
           >
             <img src={section.image} alt={section.title} className="section-image" />
             <div className="section-title">{section.title}</div>
-            <button className="section-button" onClick={(e) => {
-              e.stopPropagation(); // Evitar que el clic en el botón navegue
-              navigate(section.path);
-            }}>
-              Ver más
-            </button>
           </div>
         ))}
       </div>

@@ -5,11 +5,11 @@
   align-items: center;
   justify-content: flex-start;
   padding: 2rem;
-  background-color: #f5f5f5; /* Fondo claro */
+  background-color: #121212; /* Fondo claro */
   color: #333; /* Texto oscuro */
   font-family: Arial, sans-serif;
   text-align: center; /* Centrar todo el texto dentro del contenedor */
-  background-image: url('/src/assets/home.jpg'); /* Ruta de la nueva imagen de fondo */
+  background-image: none; /* Ruta de la nueva imagen de fondo */
   background-size: cover; /* Asegurar que la imagen cubra todo el contenedor */
   background-position: center; /* Centrar la imagen de fondo */
   background-repeat: no-repeat; /* Evitar que la imagen se repita */
@@ -22,7 +22,6 @@
   margin-bottom: 2rem;
   color: #30D5C8; /* Color destacado para el título */
   text-align: center; /* Centrar el título */
-  background-color: rgba(48, 213, 200, 0.2); /* Fondo semitransparente para destacar */
   padding: 1rem; /* Espaciado interno para mejor visibilidad */
   border-radius: 10px; /* Bordes redondeados para un diseño más atractivo */
 }

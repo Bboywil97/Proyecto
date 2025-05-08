@@ -1,70 +1,125 @@
+:root {
+  --main-color: #30D5C8;
+  --dark-bg: #121212;
+  --text-light: #ffffff;
+}
+
 .navbar {
   position: fixed;
-  top: 0; /* Posicionar en la parte superior */
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #121212; /* Fondo oscuro */
+  background: var(--dark-bg);
   padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar el header */
-  z-index: 1000; /* Asegurar que esté por encima de otros elementos */
-  height: 60px; /* Altura fija del encabezado */
-  border-bottom: 2px solid #30D5C8; /* Línea verde para coincidir con los botones */
-}
-
-.nav-item {
-  color: #ffffff;
-  font-size: 1rem;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-item:hover {
-  background-color: #30D5C8;
-  color: #121212;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 60px;
+  border-bottom: 2px solid var(--main-color);
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .navbar-button {
-  background-color: transparent; /* Fondo transparente */
-  color: #ffffff; /* Texto blanco */
-  border: 2px solid #30D5C8; /* Borde verde */
-  border-radius: 20px; /* Bordes redondeados */
-  padding: 10px 15px;
+  --main-color: #121212;
+  background-color: var(--main-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-color: #30D5C8;
+  border: 2px solid #30D5C8; /* Borde verde para los botones oscuros */
 }
 
 .navbar-button:hover {
-  background-color: #30D5C8; /* Fondo verde al pasar el mouse */
-  color: #121212; /* Texto oscuro */
-  transform: scale(1.05); /* Efecto de zoom */
+  transform: scale(1.05);
+  background-color: #28b2a7;
+  box-shadow: 0 0 15px var(--main-color);
+  border-color: #30D5C8;
+
 }
 
-.settings-button {
-  font-size: 1.2rem; /* Tamaño del ícono */
+.navbar-button.active-route {
+  background-color: #1fa89d !important;
+}
+
+.navbar-button.active-route::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 80%;
+  height: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  animation: slide-in 0.3s ease;
+}
+
+
+.navbar-search {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: transparent; /* Fondo transparente */
-  border: none; /* Sin bordes */
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
+  gap: 0.5rem;
 }
 
-.settings-button i {
-  color: #ffffff; /* Color del ícono */
+.search-input {
+  padding: 0.5rem;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  transition: all 0.3s ease;
 }
 
-.settings-button:hover i {
-  color: #30D5C8; /* Color llamativo al pasar el cursor */
-  transform: rotate(90deg); /* Efecto de rotación */
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(48, 213, 200, 0.4);
+}
+
+.search-button {
+  background-color: var(--main-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  transform: scale(1.05);
+  background-color: #28b2a7;
+}
+
+@keyframes slide-in {
+  from { width: 0% }
+  to { width: 80% }
+}
+
+@keyframes ripple {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  to {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+button:focus {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
 }
 
 .logout-button {

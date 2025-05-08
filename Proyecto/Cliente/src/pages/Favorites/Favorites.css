@@ -5,14 +5,11 @@
   align-items: center;
   justify-content: flex-start;
   padding: 2rem; /* Añadir espacio alrededor del contenedor */
-  background-color: #096958; /* Fondo claro para mejor contraste */
-  color: #ae1616; /* Texto en color negro */
+  background-color: #121212; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco para contraste */
   font-family: Arial, sans-serif;
   margin-top: 60px; /* Espacio para evitar que el encabezado cubra el contenido */
-  background-image: url('/src/assets/home.jpg'); /* Ruta de la imagen de fondo */
-  background-size: cover; /* Asegurar que la imagen cubra todo el contenedor */
-  background-position: center; /* Centrar la imagen de fondo */
-  background-repeat: no-repeat; /* Evitar que la imagen se repita */
+  background-image: none; /* Eliminar la imagen de fondo */
 }
 
 .favorites-container h1 {
