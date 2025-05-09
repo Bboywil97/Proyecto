@@ -20,6 +20,10 @@ const Settings = () => {
   useEffect(() => {
     // Guardar el idioma seleccionado en localStorage
     localStorage.setItem('language', selectedLanguage);
+    // Emitir un evento personalizado para notificar el cambio de idioma
+    const languageChangeEvent = new Event('languageChange');
+    window.dispatchEvent(languageChangeEvent);
+
     // Actualizar el idioma globalmente
     document.documentElement.lang = selectedLanguage === 'Español' ? 'es' : 'en';
   }, [selectedLanguage]);

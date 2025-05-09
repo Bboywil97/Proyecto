@@ -12,10 +12,37 @@ const Navbar = () => {
     // Aplicar el modo oscuro o claro al cargar la página
     const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
     document.body.className = darkModeEnabled ? 'dark-mode' : 'light-mode';
+  }, []);
 
-    // Sincronizar el idioma desde localStorage
-    const language = localStorage.getItem('language') || 'Español';
-    setSelectedLanguage(language);
+  useEffect(() => {
+    const syncLanguage = () => {
+      const language = localStorage.getItem('language') || 'Español';
+      console.log('Sincronizando idioma:', language);
+      setSelectedLanguage(language);
+    };
+
+    // Sincronizar el idioma al cargar el componente
+    syncLanguage();
+
+    // Escuchar cambios en localStorage y el evento personalizado
+    const handleStorageChange = (event) => {
+      if (event.key === 'language') {
+        console.log('Idioma cambiado en localStorage:', event.newValue);
+        syncLanguage();
+      }
+    };
+
+    const handleLanguageChangeEvent = () => {
+      syncLanguage();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('languageChange', handleLanguageChangeEvent);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('languageChange', handleLanguageChangeEvent);
+    };
   }, []);
 
   const handleLogout = () => {
