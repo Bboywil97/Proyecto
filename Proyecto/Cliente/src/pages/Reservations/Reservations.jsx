@@ -16,6 +16,21 @@ const Reservations = () => {
     setSelectedLanguage(language);
   }, []);
 
+  useEffect(() => {
+    // Escuchar cambios en localStorage para el idioma
+    const handleStorageChange = (event) => {
+      if (event.key === 'language') {
+        const language = event.newValue || 'Español';
+        setSelectedLanguage(language);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
   const handleDelete = (index) => {
     const updatedReservations = reservations.filter((_, i) => i !== index);
     setReservations(updatedReservations);

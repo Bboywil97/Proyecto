@@ -18,9 +18,23 @@ const Navbar = () => {
     setSelectedLanguage(language);
   }, []);
 
+  useEffect(() => {
+    // Escuchar cambios en localStorage para el idioma
+    const handleStorageChange = (event) => {
+      if (event.key === 'language') {
+        const language = event.newValue || 'Español';
+        setSelectedLanguage(language);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
   const handleLogout = () => {
-    // Eliminar el token de autenticación (si existe)
-    localStorage.removeItem('token'); // Asegúrate de que el token esté almacenado en localStorage
+    localStorage.removeItem('token'); // Eliminar el token de autenticación
     alert(selectedLanguage === 'Español' ? 'Has cerrado sesión' : 'You have logged out');
     navigate('/login'); // Redirigir al login
   };
