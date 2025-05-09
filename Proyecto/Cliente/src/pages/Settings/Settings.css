@@ -9,6 +9,22 @@ body.light-mode {
   --apply-button-text: #ffffff;
 }
 
+/* Asegúrate de que las demás páginas no sobrescriban el fondo del body */
+body.light-mode .page-container {
+  background-color: inherit; /* Hereda el fondo del body */
+}
+
+/* Asegurar que todas las páginas hereden el fondo del body */
+body.light-mode .page-container,
+body.light-mode .home-container,
+body.light-mode .favorites-container,
+body.light-mode .offers-container,
+body.light-mode .profile-container,
+body.light-mode .reservations-container {
+  background-color: inherit; /* Hereda el fondo del body */
+  color: inherit; /* Hereda el color del texto del body */
+}
+
 body.dark-mode {
   background-color: #121212; /* Fondo negro */
   color: #ffffff; /* Texto blanco */
