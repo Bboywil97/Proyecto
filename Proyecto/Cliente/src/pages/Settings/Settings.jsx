@@ -4,18 +4,25 @@ import './Settings.css';
 const Settings = () => {
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
-    // Obtener el modo inicial desde localStorage o establecerlo en verdadero (modo oscuro por defecto)
-    return localStorage.getItem('darkMode') === 'true'; // Cambiar a 'true' para reflejar correctamente el modo oscuro
+    return localStorage.getItem('darkMode') === 'true';
   });
   const [selectedFontSize, setSelectedFontSize] = useState('Seleccionar');
-  const [selectedLanguage, setSelectedLanguage] = useState('Seleccionar');
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    // Obtener el idioma inicial desde localStorage o establecerlo en español por defecto
+    return localStorage.getItem('language') || 'Español';
+  });
 
   useEffect(() => {
-    // Cambiar la clase del body según el modo
     document.body.className = darkModeEnabled ? 'dark-mode' : 'light-mode';
-    // Guardar el estado en localStorage
     localStorage.setItem('darkMode', darkModeEnabled);
   }, [darkModeEnabled]);
+
+  useEffect(() => {
+    // Guardar el idioma seleccionado en localStorage
+    localStorage.setItem('language', selectedLanguage);
+    // Actualizar el idioma globalmente
+    document.documentElement.lang = selectedLanguage === 'Español' ? 'es' : 'en';
+  }, [selectedLanguage]);
 
   const handleFontSizeSelect = (size) => {
     setSelectedFontSize(size);
@@ -28,12 +35,14 @@ const Settings = () => {
   return (
     <div className="settings-container">
       <header className="settings-header">
-        <h1>Ajustes</h1>
-        <p className="welcome-text">Hola, usuario@ejemplo.com</p>
+        <h1>{selectedLanguage === 'Español' ? 'Ajustes' : 'Settings'}</h1>
+        <p className="welcome-text">
+          {selectedLanguage === 'Español' ? 'Hola, usuario@ejemplo.com' : 'Hello, user@example.com'}
+        </p>
       </header>
       <div className="settings-options">
         <div className="settings-item">
-          <span>Notificaciones</span>
+          <span>{selectedLanguage === 'Español' ? 'Notificaciones' : 'Notifications'}</span>
           <label className="switch">
             <input
               type="checkbox"
@@ -44,7 +53,7 @@ const Settings = () => {
           </label>
         </div>
         <div className="settings-item">
-          <span>Modo claro</span>
+          <span>{selectedLanguage === 'Español' ? 'Modo claro' : 'Light Mode'}</span>
           <label className="switch">
             <input
               type="checkbox"
@@ -55,11 +64,11 @@ const Settings = () => {
           </label>
         </div>
         <div className="settings-item">
-          <span>Idioma</span>
+          <span>{selectedLanguage === 'Español' ? 'Idioma' : 'Language'}</span>
           <div className="dropdown">
             <button className="dropdown-button">{selectedLanguage}</button>
             <div className="dropdown-content">
-              {['Español', 'Inglés', 'Francés', 'Alemán'].map((language, index) => (
+              {['Español', 'Inglés'].map((language, index) => (
                 <button key={index} className="dropdown-item" onClick={() => handleLanguageSelect(language)}>
                   {language}
                 </button>
@@ -68,7 +77,7 @@ const Settings = () => {
           </div>
         </div>
         <div className="settings-item">
-          <span>Tamaño de fuente</span>
+          <span>{selectedLanguage === 'Español' ? 'Tamaño de fuente' : 'Font Size'}</span>
           <div className="dropdown">
             <button className="dropdown-button">{selectedFontSize}</button>
             <div className="dropdown-content">
@@ -81,7 +90,9 @@ const Settings = () => {
           </div>
         </div>
       </div>
-      <button className="apply-settings-button">Aplicar configuración</button>
+      <button className="apply-settings-button">
+        {selectedLanguage === 'Español' ? 'Aplicar configuración' : 'Apply Settings'}
+      </button>
     </div>
   );
 };

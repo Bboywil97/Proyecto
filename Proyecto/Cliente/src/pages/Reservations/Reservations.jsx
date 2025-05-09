@@ -3,10 +3,17 @@ import './Reservations.css';
 
 const Reservations = () => {
   const [reservations, setReservations] = useState([]);
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'Español';
+  });
 
   useEffect(() => {
     const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
     setReservations(storedReservations);
+
+    // Sincronizar el idioma desde localStorage
+    const language = localStorage.getItem('language') || 'Español';
+    setSelectedLanguage(language);
   }, []);
 
   const handleDelete = (index) => {
@@ -17,9 +24,9 @@ const Reservations = () => {
 
   return (
     <div className="reservations-container">
-      <h1>Mis Reservas</h1>
+      <h1>{selectedLanguage === 'Español' ? 'Mis Reservas' : 'My Reservations'}</h1>
       {reservations.length === 0 ? (
-        <p>No tienes reservas actualmente.</p>
+        <p>{selectedLanguage === 'Español' ? 'No tienes reservas actualmente.' : 'You have no reservations currently.'}</p>
       ) : (
         <div className="reservations-grid">
           {reservations.map((reservation, index) => (
@@ -27,14 +34,14 @@ const Reservations = () => {
               <img src={reservation.image} alt={reservation.title} className="reservation-image" />
               <div className="reservation-details">
                 <h2>{reservation.title}</h2>
-                <p>Precio: {reservation.discountPrice}</p>
-                <p>Ubicación: {reservation.location}</p>
+                <p>{selectedLanguage === 'Español' ? 'Precio' : 'Price'}: {reservation.discountPrice}</p>
+                <p>{selectedLanguage === 'Español' ? 'Ubicación' : 'Location'}: {reservation.location}</p>
               </div>
               <button
                 className="delete-reservation-button"
                 onClick={() => handleDelete(index)}
               >
-                Eliminar
+                {selectedLanguage === 'Español' ? 'Eliminar' : 'Delete'}
               </button>
             </div>
           ))}

@@ -1,35 +1,52 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'Español';
+  });
 
   useEffect(() => {
     // Aplicar el modo oscuro o claro al cargar la página
     const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
     document.body.className = darkModeEnabled ? 'dark-mode' : 'light-mode';
+
+    // Sincronizar el idioma desde localStorage
+    const language = localStorage.getItem('language') || 'Español';
+    setSelectedLanguage(language);
   }, []);
 
   const handleLogout = () => {
     // Eliminar el token de autenticación (si existe)
     localStorage.removeItem('token'); // Asegúrate de que el token esté almacenado en localStorage
-    alert('Has cerrado sesión');
+    alert(selectedLanguage === 'Español' ? 'Has cerrado sesión' : 'You have logged out');
     navigate('/login'); // Redirigir al login
   };
 
   return (
     <div className="navbar" style={{ marginBottom: '20px' }}>
-      <button className="navbar-button" onClick={() => navigate('/home')}>Inicio</button>
-      <button className="navbar-button" onClick={() => navigate('/favorites')}>Favoritos</button>
-      <button className="navbar-button" onClick={() => navigate('/offers')}>Ofertas</button>
-      <button className="navbar-button" onClick={() => navigate('/profile')}>Perfil</button>
-      <button className="navbar-button" onClick={() => navigate('/reservations')}>Reservaciones</button>
+      <button className="navbar-button" onClick={() => navigate('/home')}>
+        {selectedLanguage === 'Español' ? 'Inicio' : 'Home'}
+      </button>
+      <button className="navbar-button" onClick={() => navigate('/favorites')}>
+        {selectedLanguage === 'Español' ? 'Favoritos' : 'Favorites'}
+      </button>
+      <button className="navbar-button" onClick={() => navigate('/offers')}>
+        {selectedLanguage === 'Español' ? 'Ofertas' : 'Offers'}
+      </button>
+      <button className="navbar-button" onClick={() => navigate('/profile')}>
+        {selectedLanguage === 'Español' ? 'Perfil' : 'Profile'}
+      </button>
+      <button className="navbar-button" onClick={() => navigate('/reservations')}>
+        {selectedLanguage === 'Español' ? 'Reservaciones' : 'Reservations'}
+      </button>
       <button className="navbar-button" onClick={() => navigate('/settings')}>
-        Ajustes
+        {selectedLanguage === 'Español' ? 'Ajustes' : 'Settings'}
       </button>
       <button className="navbar-button logout-button" onClick={handleLogout}>
-        Cerrar Sesión
+        {selectedLanguage === 'Español' ? 'Cerrar Sesión' : 'Log Out'}
       </button>
     </div>
   );

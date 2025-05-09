@@ -3,10 +3,17 @@ import './Favorites.css';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'Español';
+  });
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     setFavorites(storedFavorites);
+
+    // Sincronizar el idioma desde localStorage
+    const language = localStorage.getItem('language') || 'Español';
+    setSelectedLanguage(language);
   }, []);
 
   const removeFavorite = (id) => {
@@ -17,9 +24,9 @@ const Favorites = () => {
 
   return (
     <div className="favorites-container">
-      <h1>Favoritos</h1>
+      <h1>{selectedLanguage === 'Español' ? 'Favoritos' : 'Favorites'}</h1>
       {favorites.length === 0 ? (
-        <p>No tienes elementos en tu lista de favoritos.</p>
+        <p>{selectedLanguage === 'Español' ? 'No tienes elementos en tu lista de favoritos.' : 'You have no items in your favorites list.'}</p>
       ) : (
         <div className="favorites-grid">
           {favorites.map((favorite) => (
@@ -27,13 +34,17 @@ const Favorites = () => {
               <img src={favorite.image} alt={favorite.title} className="favorite-image" />
               <div className="favorite-details">
                 <h2>{favorite.title}</h2>
-                <p>Precio Normal: {favorite.normalPrice}</p>
-                <p>Precio con Descuento: {favorite.discountPrice}</p>
+                <p>
+                  {selectedLanguage === 'Español' ? 'Precio Normal' : 'Normal Price'}: {favorite.normalPrice}
+                </p>
+                <p>
+                  {selectedLanguage === 'Español' ? 'Precio con Descuento' : 'Discount Price'}: {favorite.discountPrice}
+                </p>
                 <button
                   className="remove-favorite-button"
                   onClick={() => removeFavorite(favorite.id)}
                 >
-                  Eliminar de Favoritos
+                  {selectedLanguage === 'Español' ? 'Eliminar de Favoritos' : 'Remove from Favorites'}
                 </button>
               </div>
             </div>

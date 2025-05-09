@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Offers.css';
 import oferta1Image from '../../assets/ofertas/Oferta1comida.jpeg';
 import oferta2Image from '../../assets/ofertas/Oferta2comida.jpg';
@@ -25,6 +25,16 @@ const Offers = () => {
     const storedReservations = localStorage.getItem('reservations');
     return storedReservations ? JSON.parse(storedReservations) : [];
   });
+
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'Español';
+  });
+
+  useEffect(() => {
+    // Sincronizar el idioma desde localStorage
+    const language = localStorage.getItem('language') || 'Español';
+    setSelectedLanguage(language);
+  }, []);
 
   const offers = [
     {
@@ -183,34 +193,38 @@ const Offers = () => {
 
   return (
     <div className="offers-container">
-      <h1>Ofertas</h1>
+      <h1>{selectedLanguage === 'Español' ? 'Ofertas' : 'Offers'}</h1>
       <div className="offers-grid">
         {offers.map((offer) => (
           <div key={offer.id} className="offer-card">
             <img src={offer.image} alt={offer.title} className="offer-image" />
             <div className="offer-details">
               <h2>{offer.title}</h2>
-              <p className="normal-price">Precio Normal: {offer.normalPrice}</p>
-              <p className="discount-price">Precio con Descuento: {offer.discountPrice}</p>
+              <p className="normal-price">
+                {selectedLanguage === 'Español' ? 'Precio Normal' : 'Normal Price'}: {offer.normalPrice}
+              </p>
+              <p className="discount-price">
+                {selectedLanguage === 'Español' ? 'Precio con Descuento' : 'Discount Price'}: {offer.discountPrice}
+              </p>
               <p>{offer.description}</p>
             </div>
             <button
               className="favorite-button"
               onClick={() => handleFavorite(offer)}
             >
-              Favorito
+              {selectedLanguage === 'Español' ? 'Favorito' : 'Favorite'}
             </button>
             <button
               className="reserve-button"
               onClick={() => handleReserve(offer)}
             >
-              Reservar
+              {selectedLanguage === 'Español' ? 'Reservar' : 'Reserve'}
             </button>
             <button
               className="location-button"
               onClick={() => console.log(`Ver ubicación: ${offer.location}`)}
             >
-              Ver Ubicación
+              {selectedLanguage === 'Español' ? 'Ver Ubicación' : 'View Location'}
             </button>
           </div>
         ))}
