@@ -222,7 +222,7 @@ const Offers = () => {
             </button>
             <button
               className="location-button"
-              onClick={() => console.log(`Ver ubicación: ${offer.location}`)}
+              onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(offer.location)}`, '_blank')}
             >
               {selectedLanguage === 'Español' ? 'Ver Ubicación' : 'View Location'}
             </button>
