@@ -56,6 +56,11 @@ body.light-mode a:hover {
   text-decoration: underline;
 }
 
+/* Ajustar el color del texto específico en el modo claro */
+body.light-mode .welcome-text {
+  color: #000000; /* Texto negro para visibilidad en modo claro */
+}
+
 body.dark-mode {
   background-color: #121212; /* Fondo negro */
   color: #ffffff; /* Texto blanco */
@@ -93,6 +98,11 @@ body.dark-mode a {
 
 body.dark-mode a:hover {
   color: #1e9e8c; /* Enlaces en verde más oscuro al pasar el mouse */
+}
+
+/* Ajustar el color del texto específico en el modo oscuro */
+body.dark-mode .welcome-text {
+  color: #ffffff; /* Texto blanco para visibilidad en modo oscuro */
 }
 
 .settings-container {

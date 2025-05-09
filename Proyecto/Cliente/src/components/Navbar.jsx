@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Aplicar el modo oscuro o claro al cargar la página
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+    document.body.className = darkModeEnabled ? 'dark-mode' : 'light-mode';
+  }, []);
 
   const handleLogout = () => {
     // Eliminar el token de autenticación (si existe)

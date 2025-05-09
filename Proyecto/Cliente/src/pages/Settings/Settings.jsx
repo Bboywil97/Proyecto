@@ -5,7 +5,7 @@ const Settings = () => {
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
     // Obtener el modo inicial desde localStorage o establecerlo en verdadero (modo oscuro por defecto)
-    return localStorage.getItem('darkMode') === 'true';
+    return localStorage.getItem('darkMode') === 'true'; // Cambiar a 'true' para reflejar correctamente el modo oscuro
   });
   const [selectedFontSize, setSelectedFontSize] = useState('Seleccionar');
   const [selectedLanguage, setSelectedLanguage] = useState('Seleccionar');
@@ -29,6 +29,7 @@ const Settings = () => {
     <div className="settings-container">
       <header className="settings-header">
         <h1>Ajustes</h1>
+        <p className="welcome-text">Hola, usuario@ejemplo.com</p>
       </header>
       <div className="settings-options">
         <div className="settings-item">
@@ -47,7 +48,7 @@ const Settings = () => {
           <label className="switch">
             <input
               type="checkbox"
-              checked={!darkModeEnabled} // Invertir el estado para reflejar "Modo claro"
+              checked={!darkModeEnabled}
               onChange={() => setDarkModeEnabled(!darkModeEnabled)}
             />
             <span className="slider"></span>
