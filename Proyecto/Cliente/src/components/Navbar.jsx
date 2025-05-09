@@ -67,7 +67,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar" style={{ marginBottom: '20px' }}>
+    <div className="navbar" style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
       <button className="navbar-button" onClick={() => navigate('/home')}>
         {selectedLanguage === 'Español' ? 'Inicio' : 'Home'}
       </button>

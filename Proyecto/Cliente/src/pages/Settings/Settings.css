@@ -116,6 +116,7 @@ body.dark-mode .welcome-text {
   align-items: center;
   justify-content: flex-start;
   font-family: Arial, sans-serif;
+  margin-top: 60px; /* Ajusta este valor según la altura del Navbar */
 }
 
 .settings-header {
