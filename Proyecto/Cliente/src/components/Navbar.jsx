@@ -13,14 +13,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
+    <div className="navbar" style={{ marginBottom: '20px' }}>
       <button className="navbar-button" onClick={() => navigate('/home')}>Inicio</button>
       <button className="navbar-button" onClick={() => navigate('/favorites')}>Favoritos</button>
       <button className="navbar-button" onClick={() => navigate('/offers')}>Ofertas</button>
       <button className="navbar-button" onClick={() => navigate('/profile')}>Perfil</button>
       <button className="navbar-button" onClick={() => navigate('/reservations')}>Reservaciones</button>
-      <button className="navbar-button settings-button" onClick={() => navigate('/settings')}>
-        <i className="fas fa-cog"></i> {/* Ícono de tuerca */}
+      <button className="navbar-button" onClick={() => navigate('/settings')}>
+        Ajustes
       </button>
       <button className="navbar-button logout-button" onClick={handleLogout}>
         Cerrar Sesión
