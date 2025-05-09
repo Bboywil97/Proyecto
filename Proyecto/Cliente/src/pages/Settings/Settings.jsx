@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Settings.css';
 
 const Settings = () => {
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
-  const [darkModeEnabled, setDarkModeEnabled] = useState(false);
+  const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
+    // Obtener el modo inicial desde localStorage o establecerlo en verdadero (modo oscuro por defecto)
+    return localStorage.getItem('darkMode') === 'true';
+  });
   const [selectedFontSize, setSelectedFontSize] = useState('Seleccionar');
   const [selectedLanguage, setSelectedLanguage] = useState('Seleccionar');
+
+  useEffect(() => {
+    // Cambiar la clase del body según el modo
+    document.body.className = darkModeEnabled ? 'dark-mode' : 'light-mode';
+    // Guardar el estado en localStorage
+    localStorage.setItem('darkMode', darkModeEnabled);
+  }, [darkModeEnabled]);
 
   const handleFontSizeSelect = (size) => {
     setSelectedFontSize(size);
@@ -33,11 +43,11 @@ const Settings = () => {
           </label>
         </div>
         <div className="settings-item">
-          <span>Modo oscuro</span>
+          <span>Modo claro</span>
           <label className="switch">
             <input
               type="checkbox"
-              checked={darkModeEnabled}
+              checked={!darkModeEnabled} // Invertir el estado para reflejar "Modo claro"
               onChange={() => setDarkModeEnabled(!darkModeEnabled)}
             />
             <span className="slider"></span>

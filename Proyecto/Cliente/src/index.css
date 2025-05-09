@@ -1,0 +1,26 @@
+body.light-mode {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+  --settings-item-bg: #f0f0f0;
+  --settings-item-text: #000000;
+  --dropdown-bg: #007bff;
+  --dropdown-text: #ffffff;
+  --apply-button-bg: #007bff;
+  --apply-button-text: #ffffff;
+}
+
+body.dark-mode {
+  background-color: #121212; /* Fondo negro */
+  color: #ffffff; /* Texto blanco */
+  --settings-item-bg: #1e1e1e;
+  --settings-item-text: #ffffff;
+  --dropdown-bg: #30D5C8;
+  --dropdown-text: #121212;
+  --apply-button-bg: #1e1e1e;
+  --apply-button-text: #ffffff;
+}
+
+/* Aplicar estilos globales */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave entre modos */
+}

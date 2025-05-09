@@ -1,18 +1,30 @@
 body.light-mode {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+  --settings-item-bg: #f0f0f0;
+  --settings-item-text: #000000;
+  --dropdown-bg: #007bff;
+  --dropdown-text: #ffffff;
+  --apply-button-bg: #007bff;
+  --apply-button-text: #ffffff;
 }
 
 body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #121212; /* Fondo negro */
+  color: #ffffff; /* Texto blanco */
+  --settings-item-bg: #1e1e1e;
+  --settings-item-text: #ffffff;
+  --dropdown-bg: #30D5C8;
+  --dropdown-text: #121212;
+  --apply-button-bg: #1e1e1e;
+  --apply-button-text: #ffffff;
 }
 
 .settings-container {
   display: flex;
   flex-direction: column;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: inherit; /* Heredar el color de fondo del body */
+  color: inherit; /* Heredar el color del texto del body */
   height: 100vh;
   padding: 1rem;
   box-sizing: border-box;
@@ -44,7 +56,8 @@ body.dark-mode {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background-color: #1e1e1e;
+  background-color: var(--settings-item-bg, #1e1e1e); /* Fondo dinámico */
+  color: var(--settings-item-text, #ffffff); /* Texto dinámico */
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -100,8 +113,8 @@ input:checked + .slider:before {
 }
 
 .dropdown-button {
-  background-color: #30D5C8;
-  color: #121212;
+  background-color: var(--dropdown-bg, #30D5C8); /* Fondo dinámico */
+  color: var(--dropdown-text, #121212); /* Texto dinámico */
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -168,8 +181,8 @@ input:checked + .slider:before {
 }
 
 .apply-settings-button {
-  background-color: #1e1e1e; /* Fondo oscuro como el diseño de Navbar */
-  color: #ffffff; /* Texto blanco */
+  background-color: var(--apply-button-bg, #1e1e1e); /* Fondo dinámico */
+  color: var(--apply-button-text, #ffffff); /* Texto dinámico */
   border: 2px solid #30D5C8; /* Borde del color especificado */
   border-radius: 5px;
   padding: 10px 15px;
