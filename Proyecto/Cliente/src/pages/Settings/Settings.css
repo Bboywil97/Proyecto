@@ -22,7 +22,38 @@ body.light-mode .offers-container,
 body.light-mode .profile-container,
 body.light-mode .reservations-container {
   background-color: inherit; /* Hereda el fondo del body */
-  color: inherit; /* Hereda el color del texto del body */
+  color: #000000; /* Texto negro para mejor visibilidad */
+}
+
+body.light-mode button {
+  background-color: #007bff; /* Fondo azul para botones */
+  color: #ffffff; /* Texto blanco */
+  border: 1px solid #0056b3; /* Borde azul oscuro */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode button:hover {
+  background-color: #0056b3; /* Fondo más oscuro al pasar el mouse */
+  color: #ffffff; /* Texto blanco */
+}
+
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3, 
+body.light-mode h4, 
+body.light-mode h5, 
+body.light-mode h6 {
+  color: #000000; /* Encabezados en negro */
+}
+
+body.light-mode a {
+  color: #007bff; /* Enlaces en azul */
+  text-decoration: none;
+}
+
+body.light-mode a:hover {
+  color: #0056b3; /* Enlaces en azul oscuro al pasar el mouse */
+  text-decoration: underline;
 }
 
 body.dark-mode {
@@ -34,6 +65,34 @@ body.dark-mode {
   --dropdown-text: #121212;
   --apply-button-bg: #1e1e1e;
   --apply-button-text: #ffffff;
+}
+
+body.dark-mode button {
+  background-color: #1e1e1e; /* Fondo oscuro para botones */
+  color: #ffffff; /* Texto blanco */
+  border: 1px solid #30D5C8; /* Borde verde */
+}
+
+body.dark-mode button:hover {
+  background-color: #30D5C8; /* Fondo verde al pasar el mouse */
+  color: #121212; /* Texto oscuro */
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+  color: #ffffff; /* Encabezados en blanco */
+}
+
+body.dark-mode a {
+  color: #30D5C8; /* Enlaces en verde */
+}
+
+body.dark-mode a:hover {
+  color: #1e9e8c; /* Enlaces en verde más oscuro al pasar el mouse */
 }
 
 .settings-container {
